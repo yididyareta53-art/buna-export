@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>buna export — Ethiopian Specialty Coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,400&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h2 class="wordmark">buna export</h2>
+        <ul>
+            <li><a href="#about">about</a></li>
+            <li><a href="#coffee">coffee</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-content">
+        <p class="eyebrow">Est. Kaffa Region, Ethiopia</p>
+        <h1>Welcome to<br>Ethiopia's Pride</h1>
+        <p class="hero-sub">From the birthplace of coffee</p>
+    </div>
+
+    <p class="scroll-cue">scroll</p>
+</header>
+
+<main>
+
+    <section id="about" class="about reveal">
+        <div class="about-text">
+            <p class="eyebrow">01 — Origin</p>
+            <h2>Coffee began here.<br>Every cup carries that.</h2>
+            <p>Legend places the discovery of coffee in the forests of Kaffa, Ethiopia,
+            where wild <em>Coffea arabica</em> still grows in the shade of native trees.
+            We work directly with smallholder farmers across Yirgacheffe, Sidama, and
+            Guji to export lots that speak plainly of where they're from — nothing
+            standardized, nothing smoothed over.</p>
+        </div>
+        <div class="about-figure" style="background-image: url('image/cf.webp');"></div>
+    </section>
+
+    <section id="coffee" class="coffee reveal">
+        <p class="eyebrow">02 — Current Lots</p>
+        <h2>Export manifest</h2>
+
+        <div class="manifest">
+
+            <article class="lot">
+                <div class="lot-head">
+                    <span class="lot-code">LOT NO. ET&#8209;YG&#8209;07</span>
+                    <span class="lot-status">available</span>
+                </div>
+                <h3>Yirgacheffe</h3>
+                <dl>
+                    <div><dt>Altitude</dt><dd>1,900–2,200 m</dd></div>
+                    <div><dt>Process</dt><dd>Washed</dd></div>
+                    <div><dt>Harvest</dt><dd>Oct – Dec</dd></div>
+                    <div><dt>Notes</dt><dd>Bergamot, jasmine, lime</dd></div>
+                </dl>
+            </article>
+
+            <article class="lot">
+                <div class="lot-head">
+                    <span class="lot-code">LOT NO. ET&#8209;SD&#8209;11</span>
+                    <span class="lot-status">available</span>
+                </div>
+                <h3>Sidama</h3>
+                <dl>
+                    <div><dt>Altitude</dt><dd>1,800–2,100 m</dd></div>
+                    <div><dt>Process</dt><dd>Natural</dd></div>
+                    <div><dt>Harvest</dt><dd>Nov – Jan</dd></div>
+                    <div><dt>Notes</dt><dd>Blueberry, cane sugar, wine</dd></div>
+                </dl>
+            </article>
+
+            <article class="lot">
+                <div class="lot-head">
+                    <span class="lot-code">LOT NO. ET&#8209;GJ&#8209;04</span>
+                    <span class="lot-status">limited</span>
+                </div>
+                <h3>Guji</h3>
+                <dl>
+                    <div><dt>Altitude</dt><dd>2,000–2,300 m</dd></div>
+                    <div><dt>Process</dt><dd>Honey</dd></div>
+                    <div><dt>Harvest</dt><dd>Nov – Jan</dd></div>
+                    <div><dt>Notes</dt><dd>Stone fruit, honey, floral</dd></div>
+                </dl>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+        <p class="eyebrow">03 — Get in touch</p>
+        <h2>Import our coffee</h2>
+        <p class="contact-sub">For sample requests, pricing sheets, or shipment terms,
+        reach the export desk directly.</p>
+
+        <a class="contact-email" href="mailto:export@bunaexport.com">export@bunaexport.com</a>
+
+        <dl class="contact-meta">
+            <div><dt>Office</dt><dd>Addis Ababa, Ethiopia</dd></div>
+            <div><dt>Export terms</dt><dd>FOB Djibouti</dd></div>
+        </dl>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 buna export — Addis Ababa, Ethiopia</p>
+</footer>
+
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+}, { threshold: 0.15 });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

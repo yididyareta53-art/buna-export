@@ -1,0 +1,292 @@
+/* ---------- Tokens ---------- */
+:root{
+    --ink: #221C16;
+    --ink-soft: #5C5347;
+    --paper: #FAF7F1;
+    --paper-raised: #F3EEE4;
+    --accent: #9C7A4E;
+    --line: #D9D2C4;
+
+    --font-display: "Fraunces", serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "IBM Plex Mono", monospace;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; text-decoration: none; }
+
+.eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+/* ---------- Header / Hero ---------- */
+header{
+    position: relative;
+    min-height: 92vh;
+    background-image:
+        linear-gradient(180deg, rgba(20,15,10,0.55) 0%, rgba(20,15,10,0.35) 45%, rgba(20,15,10,0.6) 100%),
+        url("image/coffee.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    color: #FBF8F3;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 64px;
+}
+
+.wordmark{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
+    color: #FBF8F3;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a{
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #FBF8F3;
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+}
+
+nav a:hover{ opacity: 1; }
+
+.hero-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.hero-content .eyebrow{ color: #D8C6A8; }
+
+.hero-content h1{
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+}
+
+.hero-sub{
+    margin-top: 18px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #E7DCC9;
+}
+
+.scroll-cue{
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 28px;
+    opacity: 0.6;
+}
+
+/* ---------- Sections shared ---------- */
+main section{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 140px 64px;
+}
+
+h2{
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+}
+
+.reveal{
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+/* ---------- About ---------- */
+.about{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-text p:not(.eyebrow){
+    margin-top: 24px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    max-width: 46ch;
+}
+
+.about-text em{ color: var(--accent); font-style: italic; }
+
+.about-figure{
+    aspect-ratio: 4 / 5;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--paper-raised);
+    border: 1px solid var(--line);
+}
+
+/* ---------- Coffee / Manifest ---------- */
+.manifest{
+    margin-top: 56px;
+    border-top: 1px solid var(--line);
+}
+
+.lot{
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.lot-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+}
+
+.lot-status{
+    padding: 3px 10px;
+    border: 1px solid var(--line);
+    color: var(--accent);
+}
+
+.lot h3{
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.lot dl{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.lot dl > div{ display: flex; flex-direction: column; gap: 6px; }
+
+.lot dt{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+}
+
+.lot dd{ font-size: 0.98rem; }
+
+/* ---------- Contact ---------- */
+.contact-sub{
+    margin-top: 20px;
+    color: var(--ink-soft);
+    max-width: 50ch;
+}
+
+.contact-email{
+    display: inline-block;
+    margin-top: 40px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px;
+}
+
+.contact-meta{
+    margin-top: 60px;
+    display: flex;
+    gap: 64px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+}
+
+.contact-meta dt{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+}
+
+/* ---------- Footer ---------- */
+footer{
+    padding: 40px 64px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px){
+    nav{ padding: 24px 28px; }
+    nav ul{ gap: 22px; }
+    main section{ padding: 90px 28px; }
+    .about{ grid-template-columns: 1fr; gap: 40px; }
+    .about-figure{ aspect-ratio: 16 / 10; order: -1; }
+    .lot dl{ grid-template-columns: repeat(2, 1fr); }
+    .contact-meta{ flex-direction: column; gap: 24px; }
+}
+
+/* ---------- Accessibility ---------- */
+a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+    html{ scroll-behavior: auto; }
+}
